@@ -1,0 +1,13 @@
+﻿{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/{npm}",
+      "DownstreamScheme": "http",
+      "DownstreamPort": 80,
+      "DownstreamHost": "mahasiswa.services",
+      "UpstreamPathTemplate": "/mahasiswa/{npm}",
+      "UpstreamHttpMethod": ["Get"]
+    }
+  ],
+  "GlobalConfiguration": {}
+}

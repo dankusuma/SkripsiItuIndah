@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  signalr.services:
+    image: signalr.services
+    build:
+      context: .
+      dockerfile: SignalR.Services/Dockerfile
+
+  kelas.services:
+    image: kelas.services
+    build:
+      context: .
+      dockerfile: KRS_Microservices/Dockerfile
+
+
+  krs.services:
+    image: krs.services
+    build:
+      context: .
+      dockerfile: KRS.Services/Dockerfile
+
+
+  mahasiswa.services:
+    image: mahasiswa.services
+    build:
+      context: .
+      dockerfile: Mahasiswa.Services/Dockerfile
+
+
+  gateway:
+    image: gateway
+    build:
+      context: .
+      dockerfile: Gateway.services/Dockerfile
+
