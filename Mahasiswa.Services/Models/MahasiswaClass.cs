@@ -7,40 +7,39 @@ using System.Threading.Tasks;
 
 namespace Mahasiswa.Services.Models
 {
- 
+
     public class MahasiswaClass
     {
 
-        [Key] public string NPM { get; set; }
-       public string KD_CALON { get; set; }
-        public string ID_FAKULTAS { get; set; }
-        public string ID_PRODI { get; set; }
-       public string ID_KONSENTRASI { get; set; }
-       public string NOMHS { get; set; }
-       public string NAMA_MHS { get; set; }
-       public string THN_MASUK { get; set; }
-       public string JNS_KEL { get; set; }
-       public string TMP_LAHIR { get; set; }
-       public string PASSWORD { get; set; }
-       public string KD_STATUS_MHS { get; set; }
-       public string NPP_PEMBIMBING_AKADEMIK { get; set; }
-       public bool ISMASUKMIDDLE { get; set; }
-       public string ALAMAT { get; set; }
-       public string PASSWORD1 { get; set; }
-       public string PASSWORD2 { get; set; }
-       public string ID_PROGRAM { get; set; }
-       public string ID_ORTU { get; set; }
-       public string PASSWORD_ORTU { get; set; }
-       public bool IS_SUDAH_KIRIM { get; set; }
+        [Key]
+        public String npm { get; set; }
+        public string kd_calon { get; set; }
+        public byte id_fakultas { get; set; }
+        public string id_prodi { get; set; }
+        public Int16? id_konsentrasi { get; set; }
+        public string nomhs { get; set; }
+        public string nama_mhs { get; set; }
+        public Int16 thn_masuk { get; set; }
+        public string jns_kel { get; set; }
+        public string tmp_lahir { get; set; }
+        public DateTime tgl_lahir { get; set; }
+        public string password { get; set; }
+        public string kd_status_mhs { get; set; }
+        public string npp_pembimbing_akademik { get; set; }
+        public bool ismasukmiddle { get; set; }
+        public string alamat { get; set; }
+        public string password1 { get; set; }
+        public string password2 { get; set; }
+        public int? id_program { get; set; }
 
-
-        [ForeignKey("ID_Prodi")]
-        public virtual ProdiClass PRODI { get; set; }
-
-        [ForeignKey("ID_Fakultas")]
-        public virtual FakultasClass FAKULTAS { get; set; }
-        [ForeignKey("NPM")]
-        public virtual TranskripClass TRANSKRIP { get; set; }
+       
+       [ForeignKey("id_prodi")]
+        public virtual ProdiClass prodi { get; set; }
+        [ForeignKey("id_fakultas")]
+        public virtual FakultasClass fakultas { get; set; }
+        [ForeignKey("npm")]
+        public virtual TranskripClass transkrip { get; set; }
+       
 
     }
 }

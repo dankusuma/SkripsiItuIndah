@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  signalr.services:
-    image: signalr.services
+  mahasiswa.services:
+    image: mahasiswa.services
     build:
       context: .
-      dockerfile: SignalR.Services/Dockerfile
+      dockerfile: Mahasiswa.Services/Dockerfile
 
   kelas.services:
     image: kelas.services
@@ -14,19 +14,18 @@ services:
       dockerfile: KRS_Microservices/Dockerfile
 
 
-  krs.services:
-    image: krs.services
+  signalr.services:
+    image: signalr.services
     build:
       context: .
-      dockerfile: KRS.Services/Dockerfile
+      dockerfile: SignalR.Services/Dockerfile
 
 
-  mahasiswa.services:
-    image: mahasiswa.services
+  authserver:
+    image: authserver
     build:
       context: .
-      dockerfile: Mahasiswa.Services/Dockerfile
-
+      dockerfile: AuthServer/Dockerfile
 
   gateway:
     image: gateway

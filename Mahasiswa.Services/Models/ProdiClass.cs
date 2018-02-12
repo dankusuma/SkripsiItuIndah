@@ -9,12 +9,12 @@ namespace Mahasiswa.Services.Models
     public class ProdiClass
     {
         [Key]
-        public string ID_PRODI { get; set; }
-        public string ID_FAKULTAS { get; set; }
-        public string PRODI { get; set; }
-        public string PRODI_ING { get; set; }
-        public string KDPRODIDIKTI { get; set; }
-        public string JENJANG { get; set; }
-        public string BHS { get; set; }
+        public string id_prodi { get; set; }
+        public byte id_fakultas { get; set; }
+        public string prodi { get; set; }
+        public string prodi_ing { get; set; }
+        public string kdprodidikti { get; set; }
+        public string jenjang { get; set; }
+        public string bhs { get; set; }
     }
 }

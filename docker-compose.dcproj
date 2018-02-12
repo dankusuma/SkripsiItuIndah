@@ -3,10 +3,10 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.0</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>b94acd98-8299-44eb-9261-f9ca2f8e2603</ProjectGuid>
+    <ProjectGuid>74e42e97-95e0-44f0-8837-462f084978e8</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
-    <DockerServiceUrl>http://localhost:{ServicePort}/api/values</DockerServiceUrl>
-    <DockerServiceName>gateway</DockerServiceName>
+    <DockerServiceUrl>http://localhost:{ServicePort}/api/Mahasiswa</DockerServiceUrl>
+    <DockerServiceName>mahasiswa.services</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

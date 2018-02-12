@@ -10,11 +10,11 @@ namespace Mahasiswa.Services.Models
     {
 
         [Key]
-        public string ID_FAKULTAS { get; set; }
-        public string FAKULTAS { get; set; }
-        public string ALAMAT_FAKULTAS { get; set; }
-        public string TELP_FAKULTAS { get; set; }
-        public string FAX_FAKULTAS { get; set; }
+        public Byte id_fakultas { get; set; }
+        public string fakultas { get; set; }
+        public string alamat_fakultas { get; set; }
+        public string telp_fakultas { get; set; }
+        public string fax_fakultas { get; set; }
 
       
         
