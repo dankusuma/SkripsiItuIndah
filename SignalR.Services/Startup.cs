@@ -13,6 +13,10 @@ namespace SignalR.Services
 {
     public class Startup
     {
+
+
+
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,7 +27,13 @@ namespace SignalR.Services
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("fiver",
+                    policy => policy.AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+            });
             services.AddSignalR();
         }
 
@@ -35,8 +45,7 @@ namespace SignalR.Services
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
-            app.UseFileServer();
+            app.UseCors("fiver");
             app.UseSignalR(routes =>
             {
                 routes.MapHub<KapasitasHub>("kapasitas");

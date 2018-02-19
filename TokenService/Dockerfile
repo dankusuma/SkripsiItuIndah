@@ -5,10 +5,10 @@ EXPOSE 80
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
 COPY *.sln ./
-COPY Gateway.services/Gateway.Services.csproj Gateway.services/
+COPY TokenService/Token.Services.csproj TokenService/
 RUN dotnet restore
 COPY . .
-WORKDIR /src/Gateway.services
+WORKDIR /src/TokenService
 RUN dotnet build -c Release -o /app
 
 FROM build AS publish
@@ -17,4 +17,4 @@ RUN dotnet publish -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "Gateway.Services.dll"]
+ENTRYPOINT ["dotnet", "Token.Services.dll"]

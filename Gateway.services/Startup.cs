@@ -37,6 +37,13 @@ namespace Gateway
                         })
                         .WithDictionaryHandle();
                     }); ;
+            services.AddCors(options =>
+            {
+                options.AddPolicy("fiver",
+                    policy => policy.AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +52,7 @@ namespace Gateway
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             app.UseOcelot().Wait();
+            app.UseCors("fiver");
         }
     }
 }

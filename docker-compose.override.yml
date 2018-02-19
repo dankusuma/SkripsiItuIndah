@@ -1,18 +1,11 @@
 version: '3'
 
 services:
-  mahasiswa.services:
+  token.services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
-
-  kelas.services:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
 
   signalr.services:
     environment:
@@ -21,14 +14,14 @@ services:
       - "80"
 
 
-  authserver:
+  mahasiswa.services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
       - "80"
 
 
-  gateway:
+  kelas.services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:

@@ -3,27 +3,25 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:34563/",
+      "applicationUrl": "http://localhost:36946/",
       "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": false,
-      "launchUrl": "api/Kelas",
+      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "KRS_Microservices": {
+    "ASPNetCoreIdentityDemo": {
       "commandName": "Project",
-      "launchBrowser": false,
-      "launchUrl": "api/Kelas",
+      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:34563/"
+      "applicationUrl": "http://localhost:36947/"
     }
   }
 }

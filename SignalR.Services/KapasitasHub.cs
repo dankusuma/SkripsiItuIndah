@@ -1,13 +1,22 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNetCore.SignalR;
 namespace SignalR.Services
 {
-    public class KapasitasHub:Hub
+    public class KapasitasHub : Hub
     {
-        public void UpdateKapasitas(int ID_KELAS,Int16 KAPASITAS_BUKA)
+        internal class notif
         {
-            Clients.All.InvokeAsync("UpdateKelas", ID_KELAS, KAPASITAS_BUKA);
+           public int id_kelas;
+           public bool val;
+        }
+        public Task UpdateKapasitas(int id_kelas,bool val)
+        {
+            notif n=new notif();
+            n.id_kelas = id_kelas;
+            n.val = val;
+            return Clients.All.InvokeAsync("UpdateKelas", n);
 
         }
     }

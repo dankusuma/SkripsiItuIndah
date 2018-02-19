@@ -8,10 +8,16 @@ using Microsoft.EntityFrameworkCore;
 using Kelas.Services.Models;
 using System.Net.Http;
 using System.Net;
-
+using static IdentityModel.OidcConstants;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Server.HttpSys;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace Kelas.Services.Controllers
 {
+    [EnableCors("SiteCorsPolicy")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Produces("application/json")]
     [Route("api/Kelas")]
     public class KelasController : Controller
